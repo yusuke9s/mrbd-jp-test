@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="mrbd-web-app-capable" content="yes">
+  <title>JP Test</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap&text=%20%3AB%E3%81%8C%E3%81%AA%E3%81%B2%E3%82%89%E3%82%AB%E3%82%BF%E3%83%8A%E3%83%BB%E5%AD%97%E6%BC%A2">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+    <h1>日本語テスト / JP Test</h1>
+
+    <section class="card">
+      <p class="label">1. Font (A: system / B: web font)</p>
+      <p class="big">A: 漢字・ひらがな・カタカナ</p>
+      <p class="big webfont">B: 漢字・ひらがな・カタカナ</p>
+    </section>
+
+    <section class="card">
+      <p class="label">2. Voice input (pinch the box, then speak Japanese)</p>
+      <input class="focusable" id="inputJa" type="text" lang="ja" placeholder="日本語で話す (lang=ja)">
+      <input class="focusable" id="inputDefault" type="text" placeholder="Default (no lang)">
+      <p class="result" id="inputResult">-</p>
+    </section>
+
+    <section class="card">
+      <p class="label">3. Japanese audio</p>
+      <button class="focusable" id="playFile">Play audio file</button>
+      <button class="focusable" id="playTts">speechSynthesis ja-JP</button>
+      <p class="result" id="audioResult">-</p>
+    </section>
+
+    <section class="card">
+      <p class="label">4. Mic / SpeechRecognition</p>
+      <button class="focusable" id="tryRecog">Try SpeechRecognition ja-JP</button>
+      <button class="focusable" id="tryMic">Try getUserMedia</button>
+      <p class="result" id="micResult">-</p>
+    </section>
+
+    <section class="card">
+      <p class="label">5. Info</p>
+      <pre id="info"></pre>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
