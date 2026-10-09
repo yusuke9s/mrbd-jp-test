@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello</title>
+  <style>
+    html, body { margin: 0; background: #000; color: #fff; font-family: sans-serif; }
+    h1 { font-size: 48px; margin: 40px 24px 12px; }
+    p { font-size: 32px; margin: 0 24px; }
+    button { margin: 24px; padding: 16px 24px; font-size: 28px; color: #fff; background: #222; border: 3px solid #fff; border-radius: 12px; }
+  </style>
+</head>
+<body>
+  <h1>Hello OK</h1>
+  <p>日本語</p>
+  <button id="b">Tap</button>
+  <script>
+    var n = 0;
+    var b = document.getElementById('b');
+    b.addEventListener('click', function () { b.textContent = 'Tapped ' + (++n); });
+    b.focus();
+  </script>
+</body>
+</html>
