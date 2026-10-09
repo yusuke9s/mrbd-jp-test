@@ -21,9 +21,14 @@
     </section>
 
     <section class="card">
-      <p class="label">2. Voice input (pinch the box, then speak Japanese)</p>
-      <input class="focusable" id="inputJa" type="text" lang="ja" placeholder="日本語で話す (lang=ja)">
-      <input class="focusable" id="inputDefault" type="text" placeholder="Default (no lang)">
+      <p class="label">2. Voice input（それぞれ日本語で「今日の天気」と話す）</p>
+      <input class="focusable dict" id="v1" type="text" lang="ja" placeholder="A: lang=ja">
+      <input class="focusable dict" id="v2" type="text" lang="ja-JP" placeholder="B: lang=ja-JP">
+      <textarea class="focusable dict" id="v3" lang="ja-JP" rows="1" placeholder="C: textarea ja-JP"></textarea>
+      <input class="focusable dict" id="v4" type="search" lang="ja-JP" placeholder="D: search ja-JP">
+      <form lang="ja-JP" onsubmit="return false"><input class="focusable dict" id="v5" type="text" name="q" placeholder="E: form ja-JP"></form>
+      <div class="focusable dict" id="v6" contenteditable="true" lang="ja-JP" tabindex="0">F: 編集できる欄 ja-JP</div>
+      <input class="focusable dict" id="v7" type="text" lang="en-US" placeholder="G: lang=en-US（比較用）">
       <p class="result" id="inputResult">-</p>
     </section>
 

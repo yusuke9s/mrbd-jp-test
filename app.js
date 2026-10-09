@@ -2,14 +2,19 @@
   var $ = function (id) { return document.getElementById(id); };
   var hasJapanese = function (s) { return /[぀-ヿ㐀-鿿]/.test(s); };
 
+  var labels = { v1: 'A', v2: 'B', v3: 'C', v4: 'D', v5: 'E', v6: 'F', v7: 'G' };
+  var results = {};
   function showInput(e) {
-    var v = e.target.value;
-    $('inputResult').textContent = (hasJapanese(v) ? '✅ JA: ' : '⚠️ ') + e.target.id + ' → ' + (v || '(empty)');
+    var v = e.target.value !== undefined ? e.target.value : e.target.textContent;
+    if (!v) return;
+    results[labels[e.target.id]] = (hasJapanese(v) ? '✅' : '❌') + ' ' + labels[e.target.id] + ': ' + v;
+    $('inputResult').textContent = Object.keys(results).sort().map(function (k) { return results[k]; }).join('\n');
   }
-  $('inputJa').addEventListener('change', showInput);
-  $('inputDefault').addEventListener('change', showInput);
-  $('inputJa').addEventListener('input', showInput);
-  $('inputDefault').addEventListener('input', showInput);
+  Array.prototype.forEach.call(document.querySelectorAll('.dict'), function (el) {
+    el.addEventListener('change', showInput);
+    el.addEventListener('input', showInput);
+    el.addEventListener('blur', showInput);
+  });
 
   $('playFile').addEventListener('click', function () {
     var audio = new Audio('voice.m4a');
